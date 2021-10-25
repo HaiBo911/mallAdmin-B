@@ -3,7 +3,10 @@ import { setUserCookie, getUserCookie, removeUserCookie } from '@/utils/userCook
 export default {
   namespaced: true,
   state: {
+    // 用户信息
     user: getUserCookie(),
+    // 存储菜单的路由
+    menuRoutes: [],
   },
   mutations: {
     changeUserInfo(state, userinfo) {
@@ -17,6 +20,9 @@ export default {
         email: '',
       };
     },
+    changeMenuRoutes(state, routes) {
+      state.menuRoutes = routes;
+    },
   },
   actions: {
     changeUserInfo({ commit }, userinfo) {
@@ -26,6 +32,9 @@ export default {
     logout({ commit }) {
       commit('logout');
       removeUserCookie();
+    },
+    changeMenuRoutes({ commit }, routes) {
+      commit('changeMenuRoutes', routes);
     },
   },
 };
