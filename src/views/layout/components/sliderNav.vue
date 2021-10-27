@@ -9,8 +9,10 @@
     </a-button>
     <div class="breadcrumb">
       <a-breadcrumb>
-        <a-breadcrumb-item>Home</a-breadcrumb-item>
-        <a-breadcrumb-item><a href="">Application Center</a></a-breadcrumb-item>
+        <a-breadcrumb-item>{{ currentRoute[0].meta.title }}</a-breadcrumb-item>
+        <a-breadcrumb-item>
+          <router-link :to="currentRoute[1].name">{{ currentRoute[1].meta.title }}</router-link>
+          </a-breadcrumb-item>
       </a-breadcrumb>
     </div>
     <div class="user-info">
@@ -23,7 +25,14 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      currentRoute: this.$router.currentRoute.matched,
+    };
+  },
+  watch: {
+    $route() {
+      this.currentRoute = this.$router.currentRoute.matched;
+    },
   },
   methods: {
     toggleCollapsed() {

@@ -1,13 +1,23 @@
 <template>
-  <h1>商品列表</h1>
+  <div class="product-list">
+    <search @submit="searchSubmit"></search>
+  </div>
 </template>
 
 <script>
-export default {
+import Search from '@/components/Search.vue';
 
+export default {
+  components: {
+    Search,
+  },
+  methods: {
+    searchSubmit(form) {
+      console.log(form);
+    },
+  },
 };
 </script>
 
 <style>
-
 </style>

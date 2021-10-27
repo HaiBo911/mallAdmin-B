@@ -19,7 +19,7 @@ const acyncRouterMap = [
     component: Home,
     children: [{
       path: 'list',
-      name: 'ProductList',
+      name: 'List',
       meta: {
         title: '商品列表',
         hidden: false,
@@ -29,7 +29,7 @@ const acyncRouterMap = [
     },
     {
       path: 'add',
-      name: 'ProductAdd',
+      name: 'Add',
       meta: {
         title: '添加商品',
         hidden: false,

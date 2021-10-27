@@ -3,16 +3,16 @@ const roleToRouter = {
   coustomer: [{
     name: 'Product',
   }, {
-    name: 'ProductList',
+    name: 'List',
   }, {
-    name: 'ProductAdd',
+    name: 'Add',
   }],
   admin: [{
     name: 'Product',
   }, {
-    name: 'ProductList',
+    name: 'List',
   }, {
-    name: 'ProductAdd',
+    name: 'Add',
   }, {
     name: 'Category',
   }],
