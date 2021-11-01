@@ -26,13 +26,15 @@
       <a-form-model-item>
         <a-button type="primary" html-type="submit"> 搜索 </a-button>
       </a-form-model-item>
+      <!-- 新增按钮 -->
+      <a-button class="product-add-btn">
+        <router-link :to="{ name: 'Add' }">添加商品</router-link>
+      </a-button>
     </a-form-model>
   </div>
 </template>
 
 <script>
-import categoryApi from '@/api/category';
-
 export default {
   data() {
     return {
@@ -40,15 +42,9 @@ export default {
         searchWord: '',
         category: '',
       },
-      categoryList: [],
     };
   },
-  created() {
-    categoryApi.list().then((res) => {
-    //   console.log('```111```', res);
-      this.categoryList = res.data;
-    });
-  },
+  props: ['categoryList'],
   methods: {
     // 提交表单的时候触发的函数
     handleSubmit() {
@@ -65,6 +61,12 @@ export default {
 
 <style lang="less" scoped>
 .search-box {
-    padding: 10px 30px;
+  position: relative;
+  padding: 10px 30px;
+  .product-add-btn {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+  }
 }
 </style>

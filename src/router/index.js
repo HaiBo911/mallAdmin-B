@@ -38,6 +38,16 @@ const acyncRouterMap = [
       component: () => import(/* webpackChunkName: "productadd" */ '../views/page/productAdd.vue'),
     },
     {
+      path: 'add/:id',
+      name: 'Edit',
+      meta: {
+        title: '编辑商品',
+        hidden: true,
+        icon: 'file-add',
+      },
+      component: () => import(/* webpackChunkName: "productadd" */ '../views/page/productAdd.vue'),
+    },
+    {
       path: 'category',
       name: 'Category',
       meta: {

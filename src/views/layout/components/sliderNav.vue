@@ -58,6 +58,10 @@ export default {
     margin-left: 20px;
   }
   .user-info {
+    // position: fixed;
+    // right: 0;
+    // top: 0;
+    // z-index: 999;
     float: right;
     text-align: center;
     cursor: pointer;

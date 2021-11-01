@@ -1,6 +1,6 @@
 <template>
   <div class="home-container">
-    <left-menu></left-menu>
+    <left-menu :key="key"></left-menu>
     <div :class="{ 'main-app': true, 'menu-unfold': $store.state.menu.collapsed }">
       <slider-nav></slider-nav>
       <router-view></router-view>
@@ -14,7 +14,14 @@ import SliderNav from './components/sliderNav.vue';
 
 export default {
   data() {
-    return {};
+    return {
+      key: new Date().getTime(),
+    };
+  },
+  watch: {
+    $route() {
+      this.key = new Date().getTime();
+    },
   },
   components: {
     LeftMenu,
@@ -26,7 +33,7 @@ export default {
 
 <style scoped lang="less">
 // @import "~@/assets/css/home.less";
-@import url("~@/assets/css/home.less");
+// @import url("~@/assets/css/home.less");
  .main-app {
         margin-left: 180px;
         transition: all 0.2s;
